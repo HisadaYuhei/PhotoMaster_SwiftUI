@@ -42,6 +42,9 @@ struct ContentView: View {
             .onChange(of: selectedItem, initial: true) {
                 loadImage()
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("保存完了"), message: Text("画像がフォトライブラリに保存されました。"), dismissButton: .default(Text("OK")))
+            }
             
         }
         .padding()
